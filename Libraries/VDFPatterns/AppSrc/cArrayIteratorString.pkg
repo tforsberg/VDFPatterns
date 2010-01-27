@@ -33,4 +33,23 @@ Class cArrayIteratorString is a cArrayIterator
         End
     End_Function // IteratorReset
     
+    //Add element to collection
+    //Doc/ Interface=Public
+    Procedure AddToArray String sValue
+        String[] sArray
+        Get psArray to sArray
+        Move sValue to sArray[SizeOfArray(sArray)]
+        Set psArray to sArray
+    End_Procedure
+    
+    //Returns current array value
+    //Doc/ Interface=Public
+    Function CurrentArrayValue Returns String
+        Integer iCurrent
+        String[] sArray
+        Get psArray to sArray
+        Get piCurrent to iCurrent
+        Function_Return sArray[iCurrent]
+    End_Function
+    
 End_Class	// cArrayIteratorString
